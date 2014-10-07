@@ -9,13 +9,26 @@ var model={
         { action:'Comprar Flores', done:false},
         {action:'Comprar papos', done:false},
         {action:'Re-coger boletos',done:true},
-        {action:'Llamar a campitos',done:false}
+        {action:'Llamar a campitos',done:false},
+        {action:'Entregar proyecto', done:true}
         
     ]
 };
 
 var todoApp=angular.module('todoApp',[]);
-todoApp.controller("ToDoCtrl",function($scope){
-    $scope.todo=model;
 
+var modeloUsuario={
+    items:[
+        {nombre:'juan', edad:28},
+        {nombre:'erika',edad:24},
+        {nombre:'celia',edad:33}
+    ]
+}
+todoApp.controller("ToDoCtrl",function($scope){
+    $scope.todita=model;
+
+});
+
+todoApp.controller("UsuarioCtrl", function($scope){
+    $scope.usuarios=modeloUsuario;
 });
