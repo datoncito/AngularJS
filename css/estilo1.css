@@ -1,0 +1,27 @@
+/*
+Un estilo de cascada de campitos-ley
+*/
+.panel{
+    margin:20px;
+}
+table{
+    width: 100%;
+}
+.well{
+    background: #c8e5bc;
+}
+tr{
+
+    color: darkslategray;
+    width:100%;
+}
+td,th{
+     text-align:center;
+}
+h1,h2{
+    text-align: center;
+}
+#terminadas{
+width:100%;
+text-align: center;
+}
