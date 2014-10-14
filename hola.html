@@ -1,10 +1,49 @@
 <!DOCTYPE html>
-<html>
+<html data-ng-app="demo">
 <head lang="en">
     <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
+    <title>Capitulo javascript</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script type="text/javascript">
+        console.log("hola moda foca");
+        function mi_funcion(){
+           console.log('mi condenada funcion') ;
+            return "regresa caca ademas de todo!!";
+        }
+       console.log( mi_funcion());
+      if(angular.isFunction(mi_funcion)){
+          console.log('esta era funcion');
+      }else{
+          console.log('esta no era funcion');
+      }
 
+        var miApp=angular.module("demo",[]);
+        miApp.controller("demoCtrl", function($scope,$http){
+   var promesa=$http.get("http://localhost:8091/jelastic_campitos/servicios/todo");
+            promesa.success(function(datos){
+                $scope.todos=datos;
+            });
+        });
+    </script>
+</head>
+<body ng-controller="demoCtrl">
+Ejemplo muy simple
+<div class="panel">
+    <h1>A Hacer </h1>
+    <table class="table">
+        <tr>
+            <td>Accion</td><td>Done</td>
+        </tr>
+        <tr ng-repeat="algodon in todos">
+       <td>{{algodon.action}}</td>
+       <td>{{algodon.done}}</td>
+        </tr>
+    </table>
+</div>
 </body>
 </html>

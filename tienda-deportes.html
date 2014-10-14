@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="sportsStore">
+<head lang="es">
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+    <script src="js/angular.min.js"></script>
+    <script src="controllers/sportControllers.js"></script>
+
+    <script src="controllers/customFilters.js"></script>
+    <script src="controllers/productListControllers.js"></script>
+    <title>Tienda de deportes</title>
+    <meta charset="UTF-8">
+</head>
+<body ng-controller="sportsStoreCtrl">
+<div class="navbar navbar-inverse">
+    <a class="navbar-brand" href="#">SPORTS STORE</a>
+
+</div>
+<!-- PManejamos en caso de que halla un error -->
+<div class="alert alert-danger" ng-show="data.error">
+    Error({{data.error.status}}). La lista de productos no se pudo cargar.
+    <a href="/tienda-deportes.html" class="alert-link">Cliquea aqui para internarllo de
+    nuevo</a>
+</div>
+<ng-include src="'views/lista-productos.html'"></ng-include>
+</body>
+</html>
